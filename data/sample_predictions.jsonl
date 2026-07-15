@@ -1,0 +1,3 @@
+{"trace_id":"benign-001","predicted_attack":false}
+{"trace_id":"attack-001","predicted_attack":true}
+{"trace_id":"attack-002","predicted_attack":true}

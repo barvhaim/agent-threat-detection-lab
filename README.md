@@ -16,11 +16,24 @@ The repository grows through a complete detection lifecycle:
 
 The first runnable baseline is deliberately small and dependency-free. It detects high-signal tool-use patterns in structured agent traces and provides evidence for every finding.
 
+## Learning materials
+
+- **New here:** [`START_HERE.md`](START_HERE.md)
+- **Guided 12-week course:** [`course/syllabus.md`](course/syllabus.md)
+- **Hands-on labs:** [`labs/`](labs/00-first-15-minutes.md)
+- **Research source notes:** [`resources/source-notes.md`](resources/source-notes.md)
+- **Benchmarks and datasets:** [`resources/benchmarks-and-datasets.md`](resources/benchmarks-and-datasets.md)
+- **Evaluation playbook:** [`docs/concepts/evaluation-playbook.md`](docs/concepts/evaluation-playbook.md)
+- **Capstone:** [`capstone/brief.md`](capstone/brief.md)
+
 ## Quick start
 
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python examples/run_baseline.py
+PYTHONPATH=src python scripts/score_predictions.py \
+  --expected data/sample_labels.jsonl \
+  --predicted data/sample_predictions.jsonl
 ```
 
 Optional development setup:
@@ -37,11 +50,16 @@ ruff check .
 
 ```text
 data/                  Dataset documentation and deterministic fixtures
-docs/                  Learning path and design notes
+course/                Guided weekly modules
+docs/                  Learning path and concept guides
 examples/              Runnable examples
+labs/                  Hands-on exercises
+resources/             Source notes, benchmarks, and tooling
 reports/                Benchmark and research artifacts
 src/agent_threat_detection/
+  evaluation/           Dependency-free teaching metrics
   rules/                Transparent detection baselines
+templates/              Research and decision artifacts
 tests/                  Automated behavior tests
 ```
 
@@ -66,7 +84,7 @@ See [`data/taxonomy.md`](data/taxonomy.md) for operational definitions.
 
 ## Status
 
-The repository currently contains the initial schema, a deterministic rules baseline, sample traces, tests, and the full 12-week learning plan. Later phases intentionally remain explicit milestones rather than unverified claims.
+The repository contains a researched 12-week course, concept guides, labs, quizzes, templates, a deterministic rules baseline, sample traces, and a dependency-free scoring exercise. Model-training and production phases remain explicit milestones rather than unverified claims.
 
 ## Responsible use
 

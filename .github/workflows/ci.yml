@@ -16,3 +16,5 @@ jobs:
       - run: ruff check .
       - run: pytest
       - run: python examples/run_baseline.py
+      - run: python scripts/score_predictions.py --expected data/sample_labels.jsonl --predicted data/sample_predictions.jsonl
+      - run: python scripts/check_markdown_links.py .
