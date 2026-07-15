@@ -4,16 +4,23 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-threat-detection-lab"
-version = "0.1.0"
-description = "A hands-on lab for building and evaluating AI agent threat detectors"
+version = "0.2.0"
+description = "Reproducible benchmark for AI-agent threat detection research"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 authors = [{ name = "Bar Haim" }]
-dependencies = []
+dependencies = [
+  "scikit-learn>=1.6,<2",
+]
+
+[project.scripts]
+agent-threat-benchmark = "agent_threat_detection.benchmark.cli:main"
 
 [project.optional-dependencies]
 dev = [
+  "build>=1.2",
+  "mypy>=1.14",
   "pytest>=8.0",
   "ruff>=0.6",
 ]
@@ -22,9 +29,16 @@ dev = [
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
-testpaths = ["tests"]
 addopts = "-q"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_ignores = true
 
 [tool.ruff]
 line-length = 100

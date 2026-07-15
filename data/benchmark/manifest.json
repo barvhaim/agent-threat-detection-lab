@@ -1,0 +1,18 @@
+{
+  "labels": {
+    "benign": 384,
+    "data_exfiltration": 144,
+    "memory_poisoning": 144,
+    "privilege_abuse": 144,
+    "prompt_injection": 144
+  },
+  "records": 960,
+  "schema_version": "1.0",
+  "sha256": "62b08ba09763774107ef84f241c949fb14ceb0a0f8c2ef7adc498bff6ecb50bd",
+  "splits": {
+    "calibration": 240,
+    "test": 240,
+    "train": 240,
+    "validation": 240
+  }
+}

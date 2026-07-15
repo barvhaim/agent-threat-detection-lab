@@ -7,6 +7,7 @@ interpretable starting point.
 
 import re
 from collections.abc import Iterable, Mapping
+from typing import Literal
 
 from agent_threat_detection.schema import DetectionResult, Finding
 
@@ -115,6 +116,7 @@ def detect_trace(
                 )
             )
 
+    decision: Literal["allow", "alert", "block"]
     if any(finding.severity == "high" for finding in findings):
         decision = "block"
     elif findings:
